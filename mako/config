@@ -1,0 +1,16 @@
+# Colors
+default-timeout=5000
+icons=0
+max-icon-size=64
+icon-theme=Tela-Dark
+background-color=#24273a
+text-color=#cad3f5
+border-color=#8aadf4
+progress-color=over #363a4f
+font=JetBrains Mono 12
+
+[urgency=high]
+border-color=#f5a97f
+
+[app-name=lightcord]
+border-color=#88c0d0

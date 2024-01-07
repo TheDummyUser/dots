@@ -1,0 +1,85 @@
+@import '/home/gabbar/.config/waybar/color-waybar.css';
+
+* {
+  border: none;
+  font-family: 'Fira Code', 'Symbols Nerd Font Mono';
+  font-size: 14px;
+  font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+  min-height: 30px;
+    }
+
+window#waybar {
+  background: transparent;
+}
+
+window#waybar.hidden {
+  opacity: 0.1;
+}
+
+
+#custom-arch, #workspaces, #window {
+  border-radius: 10px;
+  background-color: @foreground;
+  color: @color5;
+  margin-top: 5px;
+  margin-right: 10px;
+  padding-top: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#winow {
+padding-right: 10px;
+padding-left: 10px;
+}
+
+#workspaces {
+  font-size: 10px;
+  margin-left: 0px;
+  color: @color5;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+#workspaces button:hover {
+  background: @color5;
+  color: @foreground;
+}
+
+#clock, #pulseaudio, #bluetooth, #network, #tray, #custom-power {
+  border-radius: 10px;
+  background-color: @foreground;
+  color: @color5;
+  margin-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 10px;
+}
+
+#custom-power {
+  margin-right: 0px;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+}
+#bluetooth {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding-right: 5px;
+  margin-right: 0;
+}
+
+#network {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-left: 10px;
+}
+
+#pulseaudio {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  margin-left: 5px;
+}
+
+#clock {
+  margin-right: 0;
+}

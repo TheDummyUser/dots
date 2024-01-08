@@ -1,0 +1,26 @@
+[global]
+frame_color = "#8AADF4"
+separator_color= frame
+width = (0, 600)
+height = (0, 300)
+font = JetBrains Mono 9
+icon_theme = Tela Dark
+min_icon_size = 18
+max_icon_size = 128
+
+[urgency_low]
+background = "#24273A"
+foreground = "#CAD3F5"
+timeout = 2
+
+
+[urgency_normal]
+background = "#24273A"
+foreground = "#CAD3F5"
+timeout = 3
+
+[urgency_critical]
+background = "#24273A"
+foreground = "#CAD3F5"
+frame_color = "#F5A97F"
+timeout = 9

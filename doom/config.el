@@ -76,7 +76,12 @@
 ;; they are implemented.
 ;; config.el
 
+
+(beacon-mode 1)
 ;; shell change to zsh
+;;
+;;
+
 (after! shell
   (setq shell-file-name "/bin/zsh")
   (setq explicit-shell-file-name "/bin/zsh"))
@@ -100,16 +105,52 @@
     (display-arrow-key-message)))
 
 
+
+
+;; dashboard
+(use-package dashboard
+  :init
+  (setq dashboard-set-heading-icons t)
+  (setq dashboard-set-file-icons t)
+  (setq dashboard-icon-type 'all-the-icons) ;; use `all-the-icons' package
+  (setq dashboard-banner-logo-title "Emacs is not just a code editor; it's an operating system.")
+  (setq dashboard-center-content t)
+  (setq dashboard-startup-banner "~/jjk.png")
+  (setq dashboard-items '((recents  . 5)
+                          (projects . 5)
+                          (registers . 5)))
+  :config
+  (dashboard-setup-startup-hook)
+  (dashboard-modify-heading-icons '((recents . "file-text")
+                                    (bookmarks . "book")))
+  )
+(setq initial-buffer-choice #'doom-fallback-buffer
+      doom-fallback-buffer-name "*dashboard*")
+;;(add-hook! '+doom-dashboard-functions (hide-mode-line-mode 1))
+
+
+
+
+
 ;; font
-;;
-(setq doom-font (font-spec :family "JetBrains Mono" :size 12))
-(setq doom-font "Terminus (TTF):pixelsize=12:antialias=off")
-(setq doom-font "Fira Code-12")
+(setq doom-font (font-spec :family "JetBrains Mono" :size 15)
+      doom-variable-pitch-font (font-spec :family "Ubuntu" :size 15)
+      doom-big-font (font-spec :family "JetBrains Mono" :size 24))
+(after! doom-themes
+  (setq doom-themes-enable-bold t
+        doom-themes-enable-italic t))
+(custom-set-faces!
+  '(font-lock-comment-face :slant italic)
+  '(font-lock-keyword-face :slant italic))
 
-
+;; elfeed
 ;;
-(after! tramp (advice-add 'doom--recentf-file-truename-fn :override
-                          (defun my-recent-truename (file &rest _args)
-                            (if (or (not (file-remote-p file)) (equal "sudo" (file-remote-p file 'method)))
-                                (abbreviate-file-name (file-truename (tramp-file-local-name file)))
-                              file))))
+(setq elfeed-goodies/entry-pane-size 0.5)
+
+(evil-define-key 'normal elfeed-show-mode-map
+  (kbd "J") 'elfeed-goodies/split-show-next
+  (kbd "K") 'elfeed-goodies/split-show-prev)
+(evil-define-key 'normal elfeed-search-mode-map
+  (kbd "J") 'elfeed-goodies/split-show-next
+  (kbd "K") 'elfeed-goodies/split-show-prev)
+

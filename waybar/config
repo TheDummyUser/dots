@@ -1,16 +1,8 @@
 {
-  "height": 40,
   "layer": "top",
-    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["tray","pulseaudio", "bluetooth", "network", "custom/power"],
-
-
-    "custom/power": {
-    "format": " ⏻ ",
-    "tooltip": false,
-    "on-click": "~/.config/rofi/scripts/powermenu_t6"
-    },
+    "modules-right": ["tray" ,"pulseaudio", "bluetooth", "network"],
 
 
     "hyprland/workspaces": {
@@ -20,54 +12,42 @@
       "all-outputs": true,
       "format-icons": {
         "active": " 󰮯 ",
-        "default": " 󱙝 "
+        "default": " 󰊠 "
       }
     },
 
-    "hyprland/window": {
-        "format": "{title:.60}",
-        // "rotate": 1,
-        "separate-outputs": true
-    },
-
     "clock": {
-      "format": " {:%H:%M}",
+      "format": "  {:%H:%M}",
     },
 
-
-    "pulseaudio": {
-      "format": "{icon} {volume}%",
+       "pulseaudio": {
+      "format": " {icon} {volume}%",
       "format-muted": "",
       "tooltip": false,
       "format-icons": {
         "headphone": "",
-        "default": ["", "", "󰕾", "󰕾", "󰕾", "", "", ""],
+        "default": ["", "", "󰕾", "󰕾", "󰕾", "", "", ""]
       },
       "scroll-step": 1,
     },
-
-
     "bluetooth": {
-      "format": " {status}",
+      "format": "  {status}",
       "format-disabled": "", // an empty format will hide the module
-      "format-connected": " {num_connections}",
+      "format-connected": "  {num_connections}",
       "tooltip-format": "{device_enumerate}",
       "tooltip-format-enumerate-connected": "{device_alias}   {device_address}"
     },
-
-
     "network": {
-      "interface": "enp2s0",
+      "interface": "wlan0",
       "format": "{ifname}",
-      "format-wifi": " {essid)",
-      "format-ethernet": "{ifname} 󰈀",
-      "format-disconnected": "󰖪 No Network",
+      "format-wifi": " {essid}",
+      "format-ethernet": "{ipaddr}/{cidr} ",
+      "format-disconnected": " 󰖪 No Network",
       "tooltip": false,
     },
 
-
-    "tray":{
-    "icon-size": 20,
-    "spacing": 9,
-    },
-}
+    "tray": {
+    "icon-size": 21,
+    "spacing": 10
+},
+    }

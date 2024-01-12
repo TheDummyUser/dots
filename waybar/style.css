@@ -23,9 +23,29 @@ window#waybar {
   padding-right: 5px;
 }
 
+#cpu {
+  margin-left: 5px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding-left: 15px;
+}
+
+#disk {
+ border-top-right-radius: 10px;
+ border-bottom-right-radius: 10px;
+}
+
+#cpu, #memory, #disk {
+  background-color: @foreground;
+  color: @color1;
+  margin-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 14px;
+}
 
 
-#workspaces{
+#workspaces, #clock {
     margin-top: 5px;
     border-radius: 10px;
     margin-right: 10px;

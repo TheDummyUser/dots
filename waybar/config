@@ -1,7 +1,7 @@
 {
   "layer": "top",
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["clock"],
+    "modules-left": ["clock", "cpu", "memory", "disk"],
+    "modules-center": ["hyprland/workspaces"],
     "modules-right": ["tray" ,"pulseaudio", "bluetooth", "network"],
 
 
@@ -19,10 +19,24 @@
     "clock": {
       "format": "  {:%H:%M}",
     },
-
+    "cpu": {
+    "interval": 10,
+    "format": "{}% ",
+    "max-length": 10
+    },
+    "memory": {
+    "interval": 30,
+    "format": "{}% ",
+    "max-length": 10
+    },
+    "disk": {
+    "interval": 30,
+    "format": "{percentage_free} 󰄫",
+    "path": "/"
+    },
        "pulseaudio": {
       "format": " {icon} {volume}%",
-      "format-muted": "",
+      "format-muted": "󰝟",
       "tooltip": false,
       "format-icons": {
         "headphone": "",
@@ -30,6 +44,7 @@
       },
       "scroll-step": 1,
     },
+
     "bluetooth": {
       "format": "  {status}",
       "format-disabled": "", // an empty format will hide the module
@@ -47,7 +62,9 @@
     },
 
     "tray": {
-    "icon-size": 21,
-    "spacing": 10
-},
+    "icon-size": 18,
+    "spacing": 9,
+    },
+    
+
     }
